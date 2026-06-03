@@ -1,0 +1,3392 @@
+{
+  "plan": {
+    "nombre": "Plan de estudio bíblico completo — 7 fases",
+    "descripcion": "Recorrido completo de los 66 libros protestantes (Reina Valera) en 7 fases pedagógicas. 4 capítulos por sesión estándar, 2 en libros densos.",
+    "total_sesiones": 338,
+    "total_capitulos": 1189,
+    "sesiones_semana": 6,
+    "duracion_estimada_semanas": 56
+  },
+  "sesiones": [
+    {
+      "orden": 1,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 2,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 3,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 4,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 5,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 6,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 7,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 8,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 9,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 10,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 11,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 41,
+      "capitulo_fin": 44,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 12,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 45,
+      "capitulo_fin": 48,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 13,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Génesis",
+      "abreviatura": "gn",
+      "capitulo_inicio": 49,
+      "capitulo_fin": 50,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 14,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 15,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 16,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 17,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 18,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 19,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 20,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 21,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 22,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 23,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Éxodo",
+      "abreviatura": "ex",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 24,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Josué",
+      "abreviatura": "jos",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 25,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Josué",
+      "abreviatura": "jos",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 26,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Josué",
+      "abreviatura": "jos",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 27,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Josué",
+      "abreviatura": "jos",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 28,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Josué",
+      "abreviatura": "jos",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 29,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Josué",
+      "abreviatura": "jos",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 30,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Jueces",
+      "abreviatura": "jue",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 31,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Jueces",
+      "abreviatura": "jue",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 32,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Jueces",
+      "abreviatura": "jue",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 33,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Jueces",
+      "abreviatura": "jue",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 34,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Jueces",
+      "abreviatura": "jue",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 35,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Jueces",
+      "abreviatura": "jue",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 21,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 36,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Rut",
+      "abreviatura": "rt",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 37,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 38,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 39,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 40,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 41,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 42,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 43,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 44,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Samuel",
+      "abreviatura": "1sam",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 31,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 45,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Samuel",
+      "abreviatura": "2sam",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 46,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Samuel",
+      "abreviatura": "2sam",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 47,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Samuel",
+      "abreviatura": "2sam",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 48,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Samuel",
+      "abreviatura": "2sam",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 49,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Samuel",
+      "abreviatura": "2sam",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 50,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Samuel",
+      "abreviatura": "2sam",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 51,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Reyes",
+      "abreviatura": "1re",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 52,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Reyes",
+      "abreviatura": "1re",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 53,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Reyes",
+      "abreviatura": "1re",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 54,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Reyes",
+      "abreviatura": "1re",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 55,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Reyes",
+      "abreviatura": "1re",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 56,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Reyes",
+      "abreviatura": "1re",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 22,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 57,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 58,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 59,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 60,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 61,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 62,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 63,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Reyes",
+      "abreviatura": "2re",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 25,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 64,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Esdras",
+      "abreviatura": "esd",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 65,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Esdras",
+      "abreviatura": "esd",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 66,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Esdras",
+      "abreviatura": "esd",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 10,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 67,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Nehemías",
+      "abreviatura": "neh",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 68,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Nehemías",
+      "abreviatura": "neh",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 69,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Nehemías",
+      "abreviatura": "neh",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 70,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Nehemías",
+      "abreviatura": "neh",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 13,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 71,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Ester",
+      "abreviatura": "est",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 72,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Ester",
+      "abreviatura": "est",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 73,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "Ester",
+      "abreviatura": "est",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 10,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 74,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 75,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 76,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 77,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 78,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 79,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 80,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 81,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "1 Crónicas",
+      "abreviatura": "1cr",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 29,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 82,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 83,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 84,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 85,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 86,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 87,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 88,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 89,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 90,
+      "fase": 1,
+      "fase_nombre": "Historia principal del Antiguo Testamento",
+      "libro": "2 Crónicas",
+      "abreviatura": "2cr",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 91,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Marcos",
+      "abreviatura": "mr",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 92,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Marcos",
+      "abreviatura": "mr",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 93,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Marcos",
+      "abreviatura": "mr",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 94,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Marcos",
+      "abreviatura": "mr",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 95,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 96,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 97,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 98,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 99,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 100,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 101,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Mateo",
+      "abreviatura": "mt",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 102,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Lucas",
+      "abreviatura": "lc",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 103,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Lucas",
+      "abreviatura": "lc",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 104,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Lucas",
+      "abreviatura": "lc",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 105,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Lucas",
+      "abreviatura": "lc",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 106,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Lucas",
+      "abreviatura": "lc",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 107,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Lucas",
+      "abreviatura": "lc",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 108,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Juan",
+      "abreviatura": "jn",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 109,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Juan",
+      "abreviatura": "jn",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 110,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Juan",
+      "abreviatura": "jn",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 111,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Juan",
+      "abreviatura": "jn",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 112,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Juan",
+      "abreviatura": "jn",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 113,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Juan",
+      "abreviatura": "jn",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 21,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 114,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 115,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 116,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 117,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 118,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 119,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 120,
+      "fase": 2,
+      "fase_nombre": "Evangelios y Hechos",
+      "libro": "Hechos",
+      "abreviatura": "hch",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 121,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 122,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 123,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 124,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 125,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 126,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 127,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Levítico",
+      "abreviatura": "lv",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 27,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 128,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 129,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 130,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 131,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 132,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 133,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 134,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 135,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 136,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Números",
+      "abreviatura": "nm",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 137,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 138,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 139,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 140,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 141,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 142,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 143,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 144,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 145,
+      "fase": 3,
+      "fase_nombre": "Volver al Antiguo Testamento",
+      "libro": "Deuteronomio",
+      "abreviatura": "dt",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 34,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 146,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 147,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 148,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 149,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 150,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 151,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 152,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 153,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 154,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 155,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 156,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Job",
+      "abreviatura": "job",
+      "capitulo_inicio": 41,
+      "capitulo_fin": 42,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 157,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 158,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 159,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 160,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 161,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 162,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 163,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 164,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 165,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 166,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 167,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 41,
+      "capitulo_fin": 44,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 168,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 45,
+      "capitulo_fin": 48,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 169,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 49,
+      "capitulo_fin": 52,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 170,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 53,
+      "capitulo_fin": 56,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 171,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 57,
+      "capitulo_fin": 60,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 172,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 61,
+      "capitulo_fin": 64,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 173,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 65,
+      "capitulo_fin": 68,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 174,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 69,
+      "capitulo_fin": 72,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 175,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 73,
+      "capitulo_fin": 76,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 176,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 77,
+      "capitulo_fin": 80,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 177,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 81,
+      "capitulo_fin": 84,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 178,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 85,
+      "capitulo_fin": 88,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 179,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 89,
+      "capitulo_fin": 92,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 180,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 93,
+      "capitulo_fin": 96,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 181,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 97,
+      "capitulo_fin": 100,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 182,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 101,
+      "capitulo_fin": 104,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 183,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 105,
+      "capitulo_fin": 108,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 184,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 109,
+      "capitulo_fin": 112,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 185,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 113,
+      "capitulo_fin": 116,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 186,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 117,
+      "capitulo_fin": 120,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 187,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 121,
+      "capitulo_fin": 124,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 188,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 125,
+      "capitulo_fin": 128,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 189,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 129,
+      "capitulo_fin": 132,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 190,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 133,
+      "capitulo_fin": 136,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 191,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 137,
+      "capitulo_fin": 140,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 192,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 141,
+      "capitulo_fin": 144,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 193,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 145,
+      "capitulo_fin": 148,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 194,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Salmos",
+      "abreviatura": "sal",
+      "capitulo_inicio": 149,
+      "capitulo_fin": 150,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 195,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 196,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 197,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 198,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 199,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 200,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 201,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 202,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Proverbios",
+      "abreviatura": "pr",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 31,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 203,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Eclesiastés",
+      "abreviatura": "ec",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 204,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Eclesiastés",
+      "abreviatura": "ec",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 205,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Eclesiastés",
+      "abreviatura": "ec",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 206,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Cantares",
+      "abreviatura": "cnt",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 207,
+      "fase": 4,
+      "fase_nombre": "Libros poéticos y de sabiduría",
+      "libro": "Cantares",
+      "abreviatura": "cnt",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 208,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 209,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 210,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 211,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 212,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 213,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 214,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 215,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 216,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 217,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 218,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 41,
+      "capitulo_fin": 44,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 219,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 45,
+      "capitulo_fin": 48,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 220,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 49,
+      "capitulo_fin": 52,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 221,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 53,
+      "capitulo_fin": 56,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 222,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 57,
+      "capitulo_fin": 60,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 223,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 61,
+      "capitulo_fin": 64,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 224,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Isaías",
+      "abreviatura": "is",
+      "capitulo_inicio": 65,
+      "capitulo_fin": 66,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 225,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 226,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 227,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 228,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 229,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 230,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 231,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 232,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 233,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 234,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 235,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 41,
+      "capitulo_fin": 44,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 236,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 45,
+      "capitulo_fin": 48,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 237,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jeremías",
+      "abreviatura": "jer",
+      "capitulo_inicio": 49,
+      "capitulo_fin": 52,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 238,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Lamentaciones",
+      "abreviatura": "lm",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 239,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Lamentaciones",
+      "abreviatura": "lm",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 5,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 240,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 2,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 241,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 3,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 242,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 6,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 243,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 7,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 244,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 10,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 245,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 11,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 246,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 14,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 247,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 15,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 248,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 18,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 249,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 19,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 250,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 22,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 251,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 23,
+      "capitulo_fin": 24,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 252,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 25,
+      "capitulo_fin": 26,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 253,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 27,
+      "capitulo_fin": 28,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 254,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 29,
+      "capitulo_fin": 30,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 255,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 31,
+      "capitulo_fin": 32,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 256,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 33,
+      "capitulo_fin": 34,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 257,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 35,
+      "capitulo_fin": 36,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 258,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 37,
+      "capitulo_fin": 38,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 259,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 39,
+      "capitulo_fin": 40,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 260,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 41,
+      "capitulo_fin": 42,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 261,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 43,
+      "capitulo_fin": 44,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 262,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 45,
+      "capitulo_fin": 46,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 263,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Ezequiel",
+      "abreviatura": "ez",
+      "capitulo_inicio": 47,
+      "capitulo_fin": 48,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 264,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Daniel",
+      "abreviatura": "dn",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 265,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Daniel",
+      "abreviatura": "dn",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 266,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Daniel",
+      "abreviatura": "dn",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 267,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Oseas",
+      "abreviatura": "os",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 268,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Oseas",
+      "abreviatura": "os",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 269,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Oseas",
+      "abreviatura": "os",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 270,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Oseas",
+      "abreviatura": "os",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 14,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 271,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Joel",
+      "abreviatura": "jl",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 272,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Amós",
+      "abreviatura": "am",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 273,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Amós",
+      "abreviatura": "am",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 274,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Amós",
+      "abreviatura": "am",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 9,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 275,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Abdías",
+      "abreviatura": "abd",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 1,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 276,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Jonás",
+      "abreviatura": "jon",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 277,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Miqueas",
+      "abreviatura": "mi",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 278,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Miqueas",
+      "abreviatura": "mi",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 7,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 279,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Nahúm",
+      "abreviatura": "nah",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 280,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Habacuc",
+      "abreviatura": "hab",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 281,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Sofonías",
+      "abreviatura": "sof",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 282,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Hageo",
+      "abreviatura": "hag",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 2,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 283,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Zacarías",
+      "abreviatura": "zac",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 284,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Zacarías",
+      "abreviatura": "zac",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 285,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Zacarías",
+      "abreviatura": "zac",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 286,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Zacarías",
+      "abreviatura": "zac",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 14,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 287,
+      "fase": 5,
+      "fase_nombre": "Los profetas",
+      "libro": "Malaquías",
+      "abreviatura": "mal",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 288,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Romanos",
+      "abreviatura": "ro",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 289,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Romanos",
+      "abreviatura": "ro",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 290,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Romanos",
+      "abreviatura": "ro",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 291,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Romanos",
+      "abreviatura": "ro",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 292,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Corintios",
+      "abreviatura": "1co",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 293,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Corintios",
+      "abreviatura": "1co",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 294,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Corintios",
+      "abreviatura": "1co",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 295,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Corintios",
+      "abreviatura": "1co",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 296,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Corintios",
+      "abreviatura": "2co",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 297,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Corintios",
+      "abreviatura": "2co",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 298,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Corintios",
+      "abreviatura": "2co",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 299,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Corintios",
+      "abreviatura": "2co",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 13,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 300,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Gálatas",
+      "abreviatura": "ga",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 301,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Gálatas",
+      "abreviatura": "ga",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 6,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 302,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Efesios",
+      "abreviatura": "ef",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 303,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Efesios",
+      "abreviatura": "ef",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 6,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 304,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Filipenses",
+      "abreviatura": "flp",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 305,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Colosenses",
+      "abreviatura": "col",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 306,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Tesalonicenses",
+      "abreviatura": "1ts",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 307,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Tesalonicenses",
+      "abreviatura": "1ts",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 5,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 308,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Tesalonicenses",
+      "abreviatura": "2ts",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 309,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Timoteo",
+      "abreviatura": "1ti",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 310,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Timoteo",
+      "abreviatura": "1ti",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 6,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 311,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Timoteo",
+      "abreviatura": "2ti",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 312,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Tito",
+      "abreviatura": "tit",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 313,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Filemón",
+      "abreviatura": "flm",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 1,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 314,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Hebreos",
+      "abreviatura": "heb",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 315,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Hebreos",
+      "abreviatura": "heb",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 316,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Hebreos",
+      "abreviatura": "heb",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 317,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Hebreos",
+      "abreviatura": "heb",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 13,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 318,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Santiago",
+      "abreviatura": "stg",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 319,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Santiago",
+      "abreviatura": "stg",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 5,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 320,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Pedro",
+      "abreviatura": "1pe",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 321,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Pedro",
+      "abreviatura": "1pe",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 5,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 322,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Pedro",
+      "abreviatura": "2pe",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 3,
+      "total_capitulos_sesion": 3
+    },
+    {
+      "orden": 323,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Juan",
+      "abreviatura": "1jn",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 4
+    },
+    {
+      "orden": 324,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "1 Juan",
+      "abreviatura": "1jn",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 5,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 325,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "2 Juan",
+      "abreviatura": "2jn",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 1,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 326,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "3 Juan",
+      "abreviatura": "3jn",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 1,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 327,
+      "fase": 6,
+      "fase_nombre": "Cartas del Nuevo Testamento",
+      "libro": "Judas",
+      "abreviatura": "jud",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 1,
+      "total_capitulos_sesion": 1
+    },
+    {
+      "orden": 328,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 1,
+      "capitulo_fin": 2,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 329,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 3,
+      "capitulo_fin": 4,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 330,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 5,
+      "capitulo_fin": 6,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 331,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 7,
+      "capitulo_fin": 8,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 332,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 9,
+      "capitulo_fin": 10,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 333,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 11,
+      "capitulo_fin": 12,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 334,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 13,
+      "capitulo_fin": 14,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 335,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 15,
+      "capitulo_fin": 16,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 336,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 17,
+      "capitulo_fin": 18,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 337,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 19,
+      "capitulo_fin": 20,
+      "total_capitulos_sesion": 2
+    },
+    {
+      "orden": 338,
+      "fase": 7,
+      "fase_nombre": "Apocalipsis",
+      "libro": "Apocalipsis",
+      "abreviatura": "ap",
+      "capitulo_inicio": 21,
+      "capitulo_fin": 22,
+      "total_capitulos_sesion": 2
+    }
+  ]
+}
