@@ -183,7 +183,7 @@ Responde ÚNICAMENTE con este JSON (sin texto adicional):
 
     inicio = time.time()
     try:
-        respuesta = requests.post(OLLAMA_URL, json=payload, timeout=300)
+        respuesta = requests.post(OLLAMA_URL, json=payload, timeout=1800)
         respuesta.raise_for_status()
     except requests.ConnectionError:
         raise RuntimeError(f"Ollama no está corriendo en {OLLAMA_URL.replace('/api/generate','')}")
