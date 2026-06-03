@@ -8,8 +8,8 @@
 # CONFIGURACIÓN — ajustar según el servidor
 # ============================================================
 
-$PROYECTO_PATH = "C:\proyectos\bible-study-agents"   # Ruta del proyecto en Windows
-$PYTHON_EXE    = "python"                              # O ruta absoluta: "C:\Python311\python.exe"
+$PROYECTO_PATH = "D:\proyectos\bible-study-agents"   # Ruta del proyecto en Windows
+$PYTHON_EXE    = "C:\Users\david\AppData\Local\Programs\Python\Python311\python.exe"                              # O ruta absoluta: "C:\Python311\python.exe"
 $HORA_EJECUCION = "05:00"
 $NOMBRE_TAREA   = "BibleStudy-Analisis"
 
@@ -22,7 +22,7 @@ Write-Host "Configurando tarea: $NOMBRE_TAREA" -ForegroundColor Cyan
 # Acción: correr el agente
 $accion = New-ScheduledTaskAction `
     -Execute $PYTHON_EXE `
-    -Argument "agents\agente_0_analisis.py" `
+    -Argument "D:\proyectos\bible-study-agents\bible-study-agents\agents\agente_0_analisis.py" `
     -WorkingDirectory $PROYECTO_PATH
 
 # Trigger: todos los días a las 05:00
