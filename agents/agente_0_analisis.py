@@ -163,17 +163,22 @@ PASAJE: {referencia}
 
 Responde ÚNICAMENTE con este JSON (sin texto adicional):
 {{
-  "contexto_historico": "<contexto histórico, cultural y geográfico del pasaje en 2-3 párrafos>",
-  "resumen": "<resumen claro de lo que ocurre en el pasaje en 1-2 párrafos>",
-  "temas_principales": "<temas teológicos y espirituales principales, separados por punto y coma>",
-  "conexiones": "<conexiones con otros pasajes o libros de la Biblia, máximo 3>",
-  "preguntas_reflexion": "<3 preguntas para reflexión personal o grupal, numeradas>"
+  "contexto_historico": "<contexto histórico, cultural y geográfico del pasaje — explica el período, los personajes clave y su importancia, entre 4 y 6 párrafos>",
+  "resumen": "<narra con detalle lo que ocurre en el pasaje, evento por evento, entre 4 y 6 párrafos>",
+  "temas_principales": "<5 a 7 temas teológicos y espirituales con una breve explicación de cada uno, separados por punto y coma>",
+  "conexiones": "<4 conexiones con otros pasajes o libros de la Biblia, explicando brevemente la relación>",
+  "preguntas_reflexion": "<5 preguntas numeradas profundas para reflexión personal o grupal>"
 }}"""
 
     payload = {
-        "model":  MODELO,
-        "prompt": prompt,
-        "stream": False,
+        "model":   MODELO,
+        "prompt":  prompt,
+        "stream":  False,
+        "options": {
+            "num_ctx":     8192,   # Ventana de contexto ampliada
+            "num_predict": 4096,   # Tokens máximos para la respuesta
+            "temperature": 0.3,    # Más determinista para JSON estructurado
+        },
     }
 
     inicio = time.time()
