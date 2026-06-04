@@ -155,7 +155,7 @@ def construir_texto_pasaje(versiculos, caps):
 def analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin):
     referencia = f"{libro} {cap_inicio}" if cap_inicio == cap_fin else f"{libro} {cap_inicio}–{cap_fin}"
 
-    prompt = f"""Eres un estudioso de la Biblia (Reina Valera). Analiza el siguiente pasaje bíblico y responde en español con un JSON estructurado.
+    prompt = f"""Eres un teólogo experto en hermenéutica bíblica y contexto histórico, especializado en la Biblia Reina Valera 1960. Analiza el siguiente pasaje bíblico y responde en español con un JSON estructurado.
 
 PASAJE: {referencia}
 
