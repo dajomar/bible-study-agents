@@ -175,8 +175,8 @@ Responde ÚNICAMENTE con este JSON (sin texto adicional):
         "prompt":  prompt,
         "stream":  False,
         "options": {
-            "num_ctx":     8192,   # Ventana de contexto ampliada
-            "num_predict": 4096,   # Tokens máximos para la respuesta
+            "num_ctx":     32768,  # Ventana de contexto — prompt + respuesta
+            "num_predict": 8192,   # Tokens máximos para la respuesta
             "temperature": 0.3,    # Más determinista para JSON estructurado
         },
     }
@@ -198,8 +198,10 @@ Responde ÚNICAMENTE con este JSON (sin texto adicional):
     # Extraer JSON de la respuesta
     inicio_json = texto.find("{")
     fin_json    = texto.rfind("}") + 1
-    if inicio_json < 0 or fin_json <= inicio_json:
-        raise ValueError(f"Llama no devolvió JSON válido. Respuesta: {texto[:200]}")
+    if inicio_json < 0:
+        raise ValueError(f"Llama no devolvió JSON. Respuesta: {texto[:200]}")
+    if fin_json <= inicio_json:
+        raise ValueError(f"Respuesta truncada — Llama se quedó sin tokens. Longitud: {len(texto)} chars. Fragmento final: ...{texto[-200:]}")
 
     texto_json = texto[inicio_json:fin_json]
     try:
