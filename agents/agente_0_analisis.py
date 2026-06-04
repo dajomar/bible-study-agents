@@ -197,11 +197,14 @@ Responde ÚNICAMENTE con este JSON (sin texto adicional):
 
     # Extraer JSON de la respuesta
     inicio_json = texto.find("{")
-    fin_json    = texto.rfind("}") + 1
     if inicio_json < 0:
         raise ValueError(f"Llama no devolvió JSON. Respuesta: {texto[:200]}")
+
+    fin_json = texto.rfind("}") + 1
     if fin_json <= inicio_json:
-        raise ValueError(f"Respuesta truncada — Llama se quedó sin tokens. Longitud: {len(texto)} chars. Fragmento final: ...{texto[-200:]}")
+        # El JSON no se cerró — añadir cierre para recuperar el contenido
+        texto = texto + '"}'
+        fin_json = len(texto)
 
     texto_json = texto[inicio_json:fin_json]
     try:
