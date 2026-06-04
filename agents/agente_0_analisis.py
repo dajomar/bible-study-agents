@@ -201,7 +201,21 @@ Responde ÚNICAMENTE con este JSON (sin texto adicional):
     if inicio_json < 0 or fin_json <= inicio_json:
         raise ValueError(f"Llama no devolvió JSON válido. Respuesta: {texto[:200]}")
 
-    analisis = json.loads(texto[inicio_json:fin_json])
+    texto_json = texto[inicio_json:fin_json]
+    try:
+        analisis = json.loads(texto_json)
+    except json.JSONDecodeError:
+        # Llama a veces incluye comillas o saltos de línea sin escapar dentro de los valores.
+        # Intentar extraer campo por campo con regex como fallback.
+        import re
+        analisis = {}
+        campos = ["contexto_historico", "resumen", "temas_principales", "conexiones", "preguntas_reflexion"]
+        for campo in campos:
+            patron = rf'"{campo}"\s*:\s*"(.*?)"(?:\s*[,}}])'
+            match = re.search(patron, texto_json, re.DOTALL)
+            analisis[campo] = match.group(1).replace('\\"', '"') if match else ""
+        if not any(analisis.values()):
+            raise ValueError(f"No se pudo extraer el análisis. Respuesta: {texto[:300]}")
     analisis["tokens_usados"]     = tokens
     analisis["duracion_segundos"] = duracion
 
