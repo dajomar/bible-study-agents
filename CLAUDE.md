@@ -48,6 +48,25 @@ bible_versiculos    → id, id_capitulo, numero, texto
 bible_secciones     → id, id_libro, capitulo, versiculo_inicio, titulo
                       -- id_libro ya implica la versión via JOIN con bible_libros
 bible_configuracion → id, clave, valor, descripcion
+
+-- Templates de planes de estudio (abstractos — sin IDs de versículos)
+bible_planes_templates          → id, titulo, descripcion, para_quien,
+                                  nivel ('principiante'|'intermedio'|'avanzado'|'completo'),
+                                  es_completo BOOLEAN,
+                                  duracion_estimada_dias INTEGER,
+                                  icono TEXT, color_acento TEXT,
+                                  recomendado BOOLEAN,
+                                  creado_por ('sistema'|'usuario'),
+                                  id_usuario UUID (null si sistema),
+                                  activo BOOLEAN, orden INTEGER
+
+bible_planes_templates_fases    → id, id_template, numero, titulo,
+                                  descripcion, color_acento
+
+bible_planes_templates_sesiones → id, id_fase, orden,
+                                  abreviatura_libro TEXT,
+                                  capitulo_inicio INTEGER,
+                                  capitulo_fin INTEGER
 ```
 
 > `bible_libros.version` identifica la versión bíblica de cada registro.
@@ -86,8 +105,12 @@ database/
 │                                             # + version_biblica en bible_usuarios
 ├── 005_corregir_constraint_bible_libros.sql  # Constraints compuestos (orden, version)
 │                                             # y (abreviatura, version)
-└── 006_agregar_version_a_planes.sql          # Columna version en bible_planes
-    (007 pendiente)                           # bible_secciones
+├── 006_agregar_version_a_planes.sql          # Columna version en bible_planes
+├── 007_crear_tabla_versiones.sql             # bible_versiones como fuente de verdad
+│                                             # FK desde bible_libros.version
+│                                             # y bible_usuarios.version_biblica
+├── 008_crear_tabla_secciones.sql             # bible_secciones
+└── 009_crear_tablas_templates.sql            # bible_planes_templates y tablas hijas
 ```
 
 ### Estado actual de la base de datos (2026-06-05)
@@ -99,6 +122,9 @@ database/
 | `bible_versiculos` | ~119.000 | ✅ Poblada |
 | `bible_secciones` | Varias | ✅ Poblada (RVR1960, NVI, TLA) |
 | `bible_configuracion` | 6 | ✅ Poblada |
+| `bible_planes_templates` | 7 | ✅ Poblada |
+| `bible_planes_templates_fases` | 36 | ✅ Poblada |
+| `bible_planes_templates_sesiones` | 879 | ✅ Poblada |
 | `bible_usuarios` | 0 | ⏳ Pendiente |
 | `bible_planes` | 0 | ⏳ Pendiente |
 | `bible_sesiones` | 0 | ⏳ Pendiente |
@@ -115,6 +141,22 @@ database/
 | `version_disponible_4` | `TLA` | Sí | ~26.000 versículos (traducción libre) |
 | `idioma` | `es` | — | |
 | `modelo_llama` | `llama3.1` | — | |
+
+---
+
+## Templates de planes disponibles
+
+| Orden | Template | Nivel | Días aprox. | Fases |
+|---|---|---|---|---|
+| 1 | Primera vez | Principiante | ~90 | 3 |
+| 2 | Devocional diario | Principiante | ~60 | 2 |
+| 3 | La vida de Jesús | Principiante | ~89 | 4 |
+| 4 | Las enseñanzas de Jesús | Principiante | ~73 | 3 |
+| 5 | Jesús y la iglesia | Intermedio | ~138 | 5 |
+| 6 | La gran historia | Completo | ~338 | 7 |
+| 7 | Cronológico | Intermedio | ~338 | 9 |
+
+> La resolución de sesiones abstractas a versículos reales ocurre en `bible-study-web` al adoptar un template.
 
 ---
 
@@ -145,11 +187,12 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 
 1. **Llama es el analista — nunca la fuente.** El texto bíblico viene siempre de Supabase, nunca de Llama.
 2. **RVR1960 es la versión principal** — RV1909 se mantiene solo para estudios comparativos.
-3. **Versión por plan** — `bible_planes.version` determina el texto del análisis. No cambiar la versión del plan una vez creado.
-4. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
-5. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
-6. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
-7. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
+3. **Versión por plan** — `bible_planes.version` determina el texto del análisis. El agente lee este campo para saber qué versículos usar. No cambiar la versión del plan una vez creado.
+4. **Templates son abstractos** — `bible_planes_templates_sesiones` usa `abreviatura_libro + capitulo_inicio + capitulo_fin` sin IDs de versículos. La resolución a IDs reales ocurre en `bible-study-web` vía `POST /api/plan/adoptar` cuando el usuario elige un template y una versión bíblica.
+5. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
+6. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
+7. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
+8. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
 
 ---
 
@@ -162,6 +205,7 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 | Carga manual | `scripts/cargar_biblia.py` | ✅ Para cargas desde archivo local |
 | Conversor JSON | `scripts/convertir_rvr1960.py` | ✅ Disponible |
 | Carga del plan | `scripts/cargar_plan.py` | ✅ Filtra libros por VERSION_BIBLICA |
+| Templates de planes | `scripts/poblar_templates.py` | ✅ Ejecutado — 7 templates, 879 sesiones |
 | Scheduler Windows | `scripts/setup_scheduler.ps1` | ✅ Listo para desplegar |
 | Migraciones SQL | `database/001-006_*.sql` | ✅ Ejecutadas (falta crear 007 para bible_secciones) |
 | Manejo de errores | `utils/errores.py` | ⚠️ Adaptado de otro proyecto — revisar |
@@ -180,7 +224,7 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 
 ### Despliegue inmediato
 
-- [ ] Crear migración `007_crear_tabla_secciones.sql` y ejecutarla en Supabase
+- [ ] Crear migración `007_crear_tabla_versiones.sql` — `bible_versiones` como FK fuente de verdad
 - [ ] Crear usuario en `bible_usuarios` con `version_biblica = 'RVR1960'`
 - [ ] Ejecutar `python scripts/cargar_plan.py` — carga 338 sesiones en RVR1960
 - [ ] Probar el agente manualmente: `python3 agents/agente_0_analisis.py`
