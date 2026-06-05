@@ -115,7 +115,7 @@ database/
 ├── 007_crear_tabla_versiones.sql             # bible_versiones como fuente de verdad
 │                                             # FK desde bible_libros.version
 │                                             # y bible_usuarios.version_biblica
-├── 008_crear_tabla_secciones.sql             # bible_secciones
+├── 008_busqueda_sin_tildes.sql               # Extensión unaccent + índices búsqueda sin acentos
 ├── 009_crear_tablas_templates.sql            # bible_planes_templates y tablas hijas
 └── 010_resaltados.sql                        # bible_resaltados
 ```
