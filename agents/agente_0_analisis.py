@@ -40,14 +40,15 @@ def obtener_sesiones_hoy():
     hoy = date.today().isoformat()
     resultado = (
         supabase.table("bible_sesiones")
-        .select("id, orden, versiculo_inicio_id, versiculo_fin_id, id_plan")
+        .select("id, orden, versiculo_inicio_id, versiculo_fin_id, id_plan, bible_planes!inner(activo)")
         .eq("fecha_programada", hoy)
         .eq("completada", False)
+        .eq("bible_planes.activo", True)
         .order("id_plan")
         .order("orden")
         .execute()
     )
-    return resultado.data  # Lista vacía si no hay sesiones
+    return resultado.data  # Lista vacía si no hay sesiones o todos los planes están inactivos
 
 
 def obtener_version_plan(id_plan):
