@@ -87,14 +87,43 @@ database/
 
 ---
 
+## Estado actual del código
+
+| Componente | Archivo | Estado |
+|---|---|---|
+| Agente de análisis | `agents/agente_0_analisis.py` | ✅ Implementado |
+| Carga de Biblia | `scripts/cargar_biblia.py` | ✅ Listo para ejecutar |
+| Carga del plan | `scripts/cargar_plan.py` | ✅ Listo para ejecutar |
+| Scheduler Windows | `scripts/setup_scheduler.ps1` | ✅ Listo para desplegar |
+| Migraciones SQL | `database/001-003_*.sql` | ✅ Definidas |
+| Manejo de errores | `utils/errores.py` | ⚠️ Adaptado de otro proyecto — revisar |
+| `main.py` | — | ❌ No existe (mencionado en estructura) |
+| `requirements.txt` | — | ❌ No existe |
+
+---
+
 ## Próximos pasos
 
+### Despliegue (orden obligatorio)
+
 - [ ] Crear repositorio `bible-study-agents` en GitHub (privado)
-- [ ] Ejecutar las 3 migraciones en Supabase
-- [ ] Script de carga: leer JSON de `thiagobodruk/bible` y poblar `bible_libros`, `bible_capitulos`, `bible_versiculos`
-- [ ] Agente de análisis: tomar sesión del día, extraer versículos de Supabase, enviar a Llama, guardar análisis
-- [ ] Integración Slack: enviar estudio diario formateado
-- [ ] Configurar Windows Task Scheduler
+- [ ] Ejecutar las 3 migraciones SQL en Supabase (`001`, `002`, `003`)
+- [ ] Ejecutar `python scripts/cargar_biblia.py` — carga 66 libros, ~31.000 versículos
+- [ ] Ejecutar `python scripts/cargar_plan.py` — carga 338 sesiones desde `2026-06-03`
+- [ ] Probar el agente manualmente: `python agents/agente_0_analisis.py`
+- [ ] Desplegar `scripts/setup_scheduler.ps1` como administrador en Windows
+
+### Deuda técnica
+
+- [ ] Crear `requirements.txt` con dependencias reales (`python-dotenv`, `supabase`, `requests`, `slack-sdk`)
+- [ ] Crear `main.py` como punto de entrada central o eliminarlo de la estructura documentada
+- [ ] Revisar y adaptar `utils/errores.py` — actualmente es de "Café con Historia", no del proyecto actual
+- [ ] Hacer configurable el modelo Llama (actualmente hardcodeado como `"llama3.1"`)
+
+### Agentes futuros
+
+- [ ] `agente_1_tareas.py` — extraer tareas de reflexión del análisis y guardarlas en `bible_tareas`
+- [ ] `agente_2_slack.py` — responder preguntas o feedback desde Slack
 
 ---
 
