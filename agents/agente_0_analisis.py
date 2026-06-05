@@ -36,19 +36,18 @@ slack    = None
 # PASO 1 — Obtener sesión del día
 # ============================================================
 
-def obtener_sesion_hoy():
+def obtener_sesiones_hoy():
     hoy = date.today().isoformat()
     resultado = (
         supabase.table("bible_sesiones")
         .select("id, orden, versiculo_inicio_id, versiculo_fin_id, id_plan")
         .eq("fecha_programada", hoy)
         .eq("completada", False)
-        .limit(1)
+        .order("id_plan")
+        .order("orden")
         .execute()
     )
-    if not resultado.data:
-        raise ValueError(f"No hay sesión programada para hoy ({hoy}) o ya fue completada.")
-    return resultado.data[0]
+    return resultado.data  # Lista vacía si no hay sesiones
 
 
 def obtener_version_plan(id_plan):
@@ -332,60 +331,75 @@ def correr_agente():
     supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
     slack    = WebClient(token=SLACK_TOKEN)
 
-    try:
-        # Paso 1 — Sesión del día
-        print("\n[1] Buscando sesión de hoy...")
-        sesion = obtener_sesion_hoy()
-        print(f"  → Sesión {sesion['orden']} encontrada (id={sesion['id']})")
+    # Paso 1 — Sesiones del día
+    print("\n[1] Buscando sesiones de hoy...")
+    sesiones = obtener_sesiones_hoy()
 
-        version = obtener_version_plan(sesion["id_plan"])
-        print(f"  → Versión bíblica: {version}")
+    if not sesiones:
+        msg = f"No hay sesiones programadas para hoy ({date.today().isoformat()}) o ya fueron completadas."
+        print(f"\n⚠ {msg}")
+        sys.exit(0)
 
-        # Paso 2 — Versículos
-        print("\n[2] Extrayendo versículos...")
-        versiculos, caps, libro, cap_inicio, cap_fin = obtener_versiculos(
-            sesion["versiculo_inicio_id"],
-            sesion["versiculo_fin_id"]
-        )
-        referencia = f"{libro} {cap_inicio}–{cap_fin}" if cap_inicio != cap_fin else f"{libro} {cap_inicio}"
-        texto_pasaje = construir_texto_pasaje(versiculos, caps)
-        print(f"  → {referencia} — {len(versiculos)} versículos")
+    print(f"  → {len(sesiones)} sesión(es) encontrada(s)")
 
-        # Paso 3 — Llama
-        print(f"\n[3] Enviando a Llama ({MODELO})...")
-        analisis = analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin, version)
-        print(f"  → Análisis generado en {analisis['duracion_segundos']}s ({analisis['tokens_usados']} tokens)")
+    completadas = 0
+    fallidas    = 0
 
-        # Paso 4 — Guardar
-        print("\n[4] Guardando análisis en Supabase...")
-        id_analisis = guardar_analisis(sesion["id"], analisis)
-        print(f"  → Análisis guardado (id={id_analisis})")
+    for i, sesion in enumerate(sesiones, 1):
+        print(f"\n{'─'*50}")
+        print(f"Sesión {i}/{len(sesiones)} — plan {sesion['id_plan']}, orden {sesion['orden']}")
 
-        # Paso 5 — Marcar completada
-        marcar_completada(sesion["id"])
-        print(f"  → Sesión {sesion['orden']} marcada como completada")
+        try:
+            version = obtener_version_plan(sesion["id_plan"])
+            print(f"  → Versión bíblica: {version}")
 
-        # Paso 6 — Slack
-        print("\n[5] Enviando a Slack...")
-        notificar_estudio(sesion, analisis, libro, cap_inicio, cap_fin, id_analisis)
-        print(f"  → Enviado a {CANAL_ESTUDIO}")
+            # Paso 2 — Versículos
+            versiculos, caps, libro, cap_inicio, cap_fin = obtener_versiculos(
+                sesion["versiculo_inicio_id"],
+                sesion["versiculo_fin_id"]
+            )
+            referencia = f"{libro} {cap_inicio}–{cap_fin}" if cap_inicio != cap_fin else f"{libro} {cap_inicio}"
+            texto_pasaje = construir_texto_pasaje(versiculos, caps)
+            print(f"  → {referencia} — {len(versiculos)} versículos")
 
-        print(f"\n✓ Agente completado — {referencia}")
+            # Paso 3 — Llama
+            print(f"  → Enviando a Llama ({MODELO})...")
+            analisis = analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin, version)
+            print(f"  → Análisis en {analisis['duracion_segundos']}s ({analisis['tokens_usados']} tokens)")
 
-    except ValueError as e:
-        print(f"\n⚠ {e}")
-        notificar_error(str(e))
-        sys.exit(0)  # Error de negocio — no es crítico
+            # Paso 4 — Guardar
+            id_analisis = guardar_analisis(sesion["id"], analisis)
+            print(f"  → Guardado (id={id_analisis})")
 
-    except RuntimeError as e:
-        print(f"\n✗ Error de infraestructura: {e}")
-        notificar_error(str(e))
-        sys.exit(1)
+            # Paso 5 — Marcar completada
+            marcar_completada(sesion["id"])
+            print(f"  → Sesión marcada como completada")
 
-    except Exception as e:
-        print(f"\n✗ Error inesperado: {e}")
-        notificar_error(f"Error inesperado: {e}")
-        sys.exit(1)
+            # Paso 6 — Slack
+            notificar_estudio(sesion, analisis, libro, cap_inicio, cap_fin, id_analisis)
+            print(f"  → Enviado a {CANAL_ESTUDIO}")
+
+            completadas += 1
+
+        except RuntimeError as e:
+            # Error de infraestructura (Ollama caído) — no tiene sentido continuar
+            print(f"\n✗ Error de infraestructura: {e}")
+            notificar_error(f"Error de infraestructura en sesión {sesion['id']}: {e}")
+            sys.exit(1)
+
+        except Exception as e:
+            # Error en esta sesión — registrar y continuar con las demás
+            fallidas += 1
+            print(f"  ✗ Error en sesión {sesion['id']}: {e}")
+            notificar_error(f"Error en sesión {sesion['id']} (plan {sesion['id_plan']}): {e}")
+
+    # Resumen final
+    print(f"\n{'='*50}")
+    print(f"Agente completado — {completadas} OK, {fallidas} fallidas de {len(sesiones)} sesiones")
+    print(f"{'='*50}")
+
+    if fallidas == len(sesiones):
+        sys.exit(1)  # Todas fallaron — señal de error al scheduler
 
 
 if __name__ == "__main__":
