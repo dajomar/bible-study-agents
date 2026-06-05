@@ -2,7 +2,7 @@
 
 ## Contexto del proyecto
 
-Sistema de agentes Python para estudio bíblico automatizado. Analiza textos de la Biblia (Reina Valera, 66 libros protestantes) usando Llama 3.1 local via Ollama, guarda el progreso en Supabase y envía el estudio diario por Slack.
+Sistema de agentes Python para estudio bíblico automatizado. Analiza textos de la Biblia usando Llama 3.1 local via Ollama, guarda el progreso en Supabase y envía el estudio diario por Slack.
 
 Construido con la misma arquitectura de **Café con Historia** — pipeline de agentes numerados, migraciones SQL secuenciales y manejo de errores diferenciado.
 
@@ -42,23 +42,28 @@ Todas las tablas usan el prefijo `bible_`.
 ### Tablas base (texto bíblico — inmutable)
 
 ```sql
-bible_libros      → id, orden (1-66), nombre, abreviatura, testamento, version
-bible_capitulos   → id, id_libro, numero
-bible_versiculos  → id, id_capitulo, numero, texto
+bible_libros        → id, orden (1-66), nombre, abreviatura, testamento, version
+bible_capitulos     → id, id_libro, numero
+bible_versiculos    → id, id_capitulo, numero, texto
+bible_secciones     → id, id_libro, capitulo, versiculo_inicio, titulo
+                      -- id_libro ya implica la versión via JOIN con bible_libros
 bible_configuracion → id, clave, valor, descripcion
 ```
 
-> `bible_libros.version` identifica la versión bíblica de cada registro (ej. `RV1909`, `RVR1960`).
+> `bible_libros.version` identifica la versión bíblica de cada registro.
 > Los constraints UNIQUE son compuestos: `(orden, version)` y `(abreviatura, version)` para soportar múltiples versiones simultáneas.
 
 ### Tablas de usuarios y plan
 
 ```sql
 bible_usuarios    → id (UUID), email, nombre, version_biblica (default 'RVR1960')
-bible_planes      → id, id_usuario, nombre, descripcion, activo
+bible_planes      → id, id_usuario, nombre, descripcion, activo, version
 bible_sesiones    → id, id_plan, orden, versiculo_inicio_id, versiculo_fin_id,
                     fecha_programada, completada
 ```
+
+> `bible_planes.version` determina qué versículos se usan en el análisis.
+> `bible_usuarios.version_biblica` es solo la preferencia para crear nuevos planes.
 
 ### Tablas de estudio
 
@@ -74,23 +79,26 @@ bible_tareas      → id, id_sesion, id_analisis (opcional), id_usuario,
 
 ```
 database/
-├── 001_crear_tablas_base.sql             # bible_libros, bible_capitulos, bible_versiculos
-├── 002_crear_tablas_plan.sql             # bible_usuarios, bible_planes, bible_sesiones
-├── 003_crear_tablas_estudio.sql          # bible_analisis, bible_tareas
-├── 004_crear_tabla_configuracion.sql     # bible_configuracion + columna version en bible_libros
-                                          # + columna version_biblica en bible_usuarios
-└── 005_corregir_constraint_bible_libros.sql  # Constraints compuestos (orden, version)
-                                              # y (abreviatura, version)
+├── 001_crear_tablas_base.sql                 # bible_libros, bible_capitulos, bible_versiculos
+├── 002_crear_tablas_plan.sql                 # bible_usuarios, bible_planes, bible_sesiones
+├── 003_crear_tablas_estudio.sql              # bible_analisis, bible_tareas
+├── 004_crear_tabla_configuracion.sql         # bible_configuracion + version en bible_libros
+│                                             # + version_biblica en bible_usuarios
+├── 005_corregir_constraint_bible_libros.sql  # Constraints compuestos (orden, version)
+│                                             # y (abreviatura, version)
+└── 006_agregar_version_a_planes.sql          # Columna version en bible_planes
+    (007 pendiente)                           # bible_secciones
 ```
 
 ### Estado actual de la base de datos (2026-06-05)
 
-| Tabla | Registros | Estado |
+| Tabla | Registros | Notas |
 |---|---|---|
-| `bible_libros` | 132 (66 × 2 versiones) | ✅ Poblada |
-| `bible_capitulos` | 2.378 | ✅ Poblada |
-| `bible_versiculos` | ~62.000 | ✅ Poblada |
-| `bible_configuracion` | 4 | ✅ Poblada |
+| `bible_libros` | 264 (66 × 4 versiones) | ✅ Poblada |
+| `bible_capitulos` | ~4.756 | ✅ Poblada |
+| `bible_versiculos` | ~119.000 | ✅ Poblada |
+| `bible_secciones` | Varias | ✅ Poblada (RVR1960, NVI, TLA) |
+| `bible_configuracion` | 6 | ✅ Poblada |
 | `bible_usuarios` | 0 | ⏳ Pendiente |
 | `bible_planes` | 0 | ⏳ Pendiente |
 | `bible_sesiones` | 0 | ⏳ Pendiente |
@@ -99,18 +107,20 @@ database/
 
 ### Versiones bíblicas activas
 
-| Clave | Valor | Notas |
-|---|---|---|
-| `version_disponible_1` | `RV1909` | Reina Valera 1909 |
-| `version_disponible_2` | `RVR1960` | Reina Valera Revisada 1960 — **versión principal** |
-| `idioma` | `es` | |
-| `modelo_llama` | `llama3.1` | |
+| Clave | Valor | Secciones | Notas |
+|---|---|---|---|
+| `version_disponible_1` | `RV1909` | No | Solo para estudios comparativos |
+| `version_disponible_2` | `RVR1960` | Sí | **Versión principal del sistema** |
+| `version_disponible_3` | `NVI` | Sí | |
+| `version_disponible_4` | `TLA` | Sí | ~26.000 versículos (traducción libre) |
+| `idioma` | `es` | — | |
+| `modelo_llama` | `llama3.1` | — | |
 
 ---
 
 ## Formato estándar de JSON bíblico
 
-Cualquier versión futura debe convertirse a este formato antes de cargarse con `cargar_biblia.py`:
+Cualquier versión futura debe estar en este formato antes de cargarse:
 
 ```json
 [{
@@ -127,15 +137,19 @@ Cualquier versión futura debe convertirse a este formato antes de cargarse con 
 }]
 ```
 
+> Si el JSON fuente tiene versículos duplicados, **el primero gana** (comportamiento de `descargar_y_cargar_versiones.py`).
+
 ---
 
 ## Reglas del proyecto
 
 1. **Llama es el analista — nunca la fuente.** El texto bíblico viene siempre de Supabase, nunca de Llama.
-2. **Formato estándar obligatorio** — cualquier JSON bíblico nuevo debe convertirse con `scripts/convertir_rvr1960.py` o equivalente antes de cargarse.
-3. **Script de carga unificado** — usar siempre `scripts/cargar_biblia.py <VERSION> <ARCHIVO_JSON>`. Los scripts específicos por versión están deprecados.
-4. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
-5. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
+2. **RVR1960 es la versión principal** — RV1909 se mantiene solo para estudios comparativos.
+3. **Versión por plan** — `bible_planes.version` determina el texto del análisis. No cambiar la versión del plan una vez creado.
+4. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
+5. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
+6. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
+7. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
 
 ---
 
@@ -143,22 +157,22 @@ Cualquier versión futura debe convertirse a este formato antes de cargarse con 
 
 | Componente | Archivo | Estado |
 |---|---|---|
-| Agente de análisis | `agents/agente_0_analisis.py` | ✅ Implementado |
-| Carga unificada | `scripts/cargar_biblia.py` | ✅ Definitivo — usar este |
+| Agente de análisis | `agents/agente_0_analisis.py` | ✅ Implementado, lee version del plan |
+| Descarga y carga multi-versión | `scripts/descargar_y_cargar_versiones.py` | ✅ Definitivo — RVR1960, NVI, TLA |
+| Carga manual | `scripts/cargar_biblia.py` | ✅ Para cargas desde archivo local |
 | Conversor JSON | `scripts/convertir_rvr1960.py` | ✅ Disponible |
-| Carga del plan | `scripts/cargar_plan.py` | ✅ Listo para ejecutar |
+| Carga del plan | `scripts/cargar_plan.py` | ✅ Filtra libros por VERSION_BIBLICA |
 | Scheduler Windows | `scripts/setup_scheduler.ps1` | ✅ Listo para desplegar |
-| Migraciones SQL | `database/001-005_*.sql` | ✅ Definidas (005 ejecutadas) |
+| Migraciones SQL | `database/001-006_*.sql` | ✅ Ejecutadas (falta crear 007 para bible_secciones) |
 | Manejo de errores | `utils/errores.py` | ⚠️ Adaptado de otro proyecto — revisar |
 | `requirements.txt` | — | ✅ Creado |
-| `main.py` | — | ❌ No existe — eliminar de la estructura documentada |
 
 ### Scripts deprecados (no usar)
 
 | Archivo | Reemplazado por |
 |---|---|
-| `scripts/cargar_biblia_rvr09.py` | `scripts/cargar_biblia.py RV1909 <archivo>` |
-| `scripts/cargar_biblia_rvr1960.py` | `scripts/cargar_biblia.py RVR1960 <archivo>` |
+| `scripts/cargar_biblia_rvr09.py` | `scripts/descargar_y_cargar_versiones.py` |
+| `scripts/cargar_biblia_rvr1960.py` | `scripts/descargar_y_cargar_versiones.py` |
 
 ---
 
@@ -166,16 +180,16 @@ Cualquier versión futura debe convertirse a este formato antes de cargarse con 
 
 ### Despliegue inmediato
 
+- [ ] Crear migración `007_crear_tabla_secciones.sql` y ejecutarla en Supabase
 - [ ] Crear usuario en `bible_usuarios` con `version_biblica = 'RVR1960'`
-- [ ] Ejecutar `python scripts/cargar_plan.py` — carga 338 sesiones
-- [ ] Probar el agente manualmente: `python agents/agente_0_analisis.py`
+- [ ] Ejecutar `python scripts/cargar_plan.py` — carga 338 sesiones en RVR1960
+- [ ] Probar el agente manualmente: `python3 agents/agente_0_analisis.py`
 - [ ] Desplegar `scripts/setup_scheduler.ps1` como administrador en Windows
-- [ ] Crear repositorio `bible-study-agents` en GitHub (privado)
 
 ### Deuda técnica
 
 - [ ] Revisar y adaptar `utils/errores.py` — actualmente es de "Café con Historia"
-- [ ] Hacer configurable el modelo Llama (actualmente hardcodeado como `"llama3.1"`, también en `bible_configuracion`)
+- [ ] Hacer configurable el modelo Llama (hardcodeado como `"llama3.1"`, también en `bible_configuracion`)
 - [ ] Eliminar scripts deprecados de carga individuales
 
 ### Agentes futuros
