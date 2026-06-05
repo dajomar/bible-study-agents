@@ -67,6 +67,12 @@ bible_planes_templates_sesiones → id, id_fase, orden,
                                   abreviatura_libro TEXT,
                                   capitulo_inicio INTEGER,
                                   capitulo_fin INTEGER
+
+-- Resaltados por usuario
+bible_resaltados                → id SERIAL, id_usuario UUID, id_versiculo INT,
+                                  color ('amarillo'|'verde'|'azul'|'rosa'|'naranja'),
+                                  created_at TIMESTAMPTZ
+                                  -- UNIQUE (id_usuario, id_versiculo)
 ```
 
 > `bible_libros.version` identifica la versión bíblica de cada registro.
@@ -110,7 +116,8 @@ database/
 │                                             # FK desde bible_libros.version
 │                                             # y bible_usuarios.version_biblica
 ├── 008_crear_tabla_secciones.sql             # bible_secciones
-└── 009_crear_tablas_templates.sql            # bible_planes_templates y tablas hijas
+├── 009_crear_tablas_templates.sql            # bible_planes_templates y tablas hijas
+└── 010_resaltados.sql                        # bible_resaltados
 ```
 
 ### Estado actual de la base de datos (2026-06-05)
@@ -125,6 +132,7 @@ database/
 | `bible_planes_templates` | 7 | ✅ Poblada |
 | `bible_planes_templates_fases` | 36 | ✅ Poblada |
 | `bible_planes_templates_sesiones` | 879 | ✅ Poblada |
+| `bible_resaltados` | 0 | ✅ Estructura lista — se puebla por uso |
 | `bible_usuarios` | 0 | ⏳ Pendiente |
 | `bible_planes` | 0 | ⏳ Pendiente |
 | `bible_sesiones` | 0 | ⏳ Pendiente |
@@ -141,6 +149,21 @@ database/
 | `version_disponible_4` | `TLA` | Sí | ~26.000 versículos (traducción libre) |
 | `idioma` | `es` | — | |
 | `modelo_llama` | `llama3.1` | — | |
+
+---
+
+## API — bible-study-web
+
+Endpoints relevantes para los agentes o integraciones futuras.
+
+### Resaltados
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| `GET` | `/api/resaltados?versiculos=1,2,3` | Colores de resaltado para los IDs dados |
+| `POST` | `/api/resaltados` | Upsert `{ id_versiculo, color }` |
+| `DELETE` | `/api/resaltados/[versiculoId]` | Elimina resaltado del usuario autenticado |
+| `GET` | `/api/resaltados/todos` | Todos los resaltados del usuario con join verso → capítulo → libro |
 
 ---
 
