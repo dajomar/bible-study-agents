@@ -50,6 +50,18 @@ def obtener_sesion_hoy():
         raise ValueError(f"No hay sesión programada para hoy ({hoy}) o ya fue completada.")
     return resultado.data[0]
 
+
+def obtener_version_plan(id_plan):
+    resultado = (
+        supabase.table("bible_planes")
+        .select("version")
+        .eq("id", id_plan)
+        .single()
+        .execute()
+        .data
+    )
+    return resultado.get("version", "RVR1960")
+
 # ============================================================
 # PASO 2 — Extraer versículos del pasaje
 # ============================================================
@@ -152,10 +164,10 @@ def construir_texto_pasaje(versiculos, caps):
 # PASO 3 — Analizar con Llama
 # ============================================================
 
-def analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin):
+def analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin, version="RVR1960"):
     referencia = f"{libro} {cap_inicio}" if cap_inicio == cap_fin else f"{libro} {cap_inicio}–{cap_fin}"
 
-    prompt = f"""Eres un teólogo experto en hermenéutica bíblica y contexto histórico, especializado en la Biblia Reina Valera 1960. Analiza el siguiente pasaje bíblico y responde en español con un JSON estructurado.
+    prompt = f"""Eres un teólogo experto en hermenéutica bíblica y contexto histórico, especializado en la Biblia {version}. Analiza el siguiente pasaje bíblico y responde en español con un JSON estructurado.
 
 PASAJE: {referencia}
 
@@ -326,6 +338,9 @@ def correr_agente():
         sesion = obtener_sesion_hoy()
         print(f"  → Sesión {sesion['orden']} encontrada (id={sesion['id']})")
 
+        version = obtener_version_plan(sesion["id_plan"])
+        print(f"  → Versión bíblica: {version}")
+
         # Paso 2 — Versículos
         print("\n[2] Extrayendo versículos...")
         versiculos, caps, libro, cap_inicio, cap_fin = obtener_versiculos(
@@ -338,7 +353,7 @@ def correr_agente():
 
         # Paso 3 — Llama
         print(f"\n[3] Enviando a Llama ({MODELO})...")
-        analisis = analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin)
+        analisis = analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin, version)
         print(f"  → Análisis generado en {analisis['duracion_segundos']}s ({analisis['tokens_usados']} tokens)")
 
         # Paso 4 — Guardar

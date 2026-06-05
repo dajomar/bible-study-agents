@@ -18,10 +18,11 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 JSON_PATH = Path(__file__).parent / "plan_lectura.json"
 
-USUARIO_EMAIL  = "davidmaza@gmail.com"
-USUARIO_NOMBRE = "David"
-FECHA_INICIO   = date(2026, 6, 3)   # Primer día del plan
-DIA_DESCANSO   = 6                   # 0=lunes … 6=domingo
+USUARIO_EMAIL    = "davidmaza@gmail.com"
+USUARIO_NOMBRE   = "David"
+VERSION_BIBLICA  = "RVR1960"
+FECHA_INICIO     = date(2026, 6, 3)   # Primer día del plan
+DIA_DESCANSO     = 6                   # 0=lunes … 6=domingo
 
 # Mapeo de abreviaturas del plan (español) → abreviaturas en BD (es_rvr.json)
 PLAN_A_DB = {
@@ -107,7 +108,7 @@ def cargar_plan():
     # --------------------------------------------------------
     print("[1] Precargando libros y capítulos...")
 
-    libros_db = supabase.table("bible_libros").select("id, abreviatura").execute().data
+    libros_db = supabase.table("bible_libros").select("id, abreviatura").eq("version", VERSION_BIBLICA).execute().data
     id_por_abbrev_db = {l["abreviatura"]: l["id"] for l in libros_db}
     # Agregar entradas con abreviaturas del plan para lookup directo
     id_por_abbrev = {**id_por_abbrev_db}
@@ -170,7 +171,7 @@ def cargar_plan():
     else:
         nuevo_usuario = (
             supabase.table("bible_usuarios")
-            .insert({"email": USUARIO_EMAIL, "nombre": USUARIO_NOMBRE})
+            .insert({"email": USUARIO_EMAIL, "nombre": USUARIO_NOMBRE, "version_biblica": VERSION_BIBLICA})
             .execute()
             .data
         )
@@ -189,6 +190,7 @@ def cargar_plan():
             "nombre":      plan_meta["nombre"],
             "descripcion": plan_meta["descripcion"],
             "activo":      True,
+            "version":     VERSION_BIBLICA,
         })
         .execute()
         .data
