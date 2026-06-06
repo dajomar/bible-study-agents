@@ -73,7 +73,17 @@ bible_resaltados                → id SERIAL, id_usuario UUID, id_versiculo INT
                                   color ('amarillo'|'verde'|'azul'|'rosa'|'naranja'),
                                   created_at TIMESTAMPTZ
                                   -- UNIQUE (id_usuario, id_versiculo)
+
+-- Comentarios exegéticos (sin FK a bible_libros — aplica a todas las versiones)
+bible_comentarios               → id, abreviatura_libro TEXT, capitulo INTEGER,
+                                  titulo_capitulo TEXT, versiculo_inicio INTEGER,
+                                  versiculo_fin INTEGER, titulo_seccion TEXT,
+                                  texto TEXT, autor TEXT DEFAULT 'matthew_henry',
+                                  created_at
+                                  -- UNIQUE(abreviatura_libro, capitulo, versiculo_inicio, autor)
 ```
+
+> `bible_comentarios` no tiene FK a `bible_libros` — usa `abreviatura_libro` como texto para que un comentario aplique a todas las versiones bíblicas sin duplicar datos.
 
 > `bible_libros.version` identifica la versión bíblica de cada registro.
 > Los constraints UNIQUE son compuestos: `(orden, version)` y `(abreviatura, version)` para soportar múltiples versiones simultáneas.
@@ -117,7 +127,8 @@ database/
 │                                             # y bible_usuarios.version_biblica
 ├── 008_busqueda_sin_tildes.sql               # Extensión unaccent + índices búsqueda sin acentos
 ├── 009_crear_tablas_templates.sql            # bible_planes_templates y tablas hijas
-└── 010_resaltados.sql                        # bible_resaltados
+├── 010_resaltados.sql                        # bible_resaltados
+└── 011_crear_tabla_comentarios.sql           # bible_comentarios (sin FK a bible_libros)
 ```
 
 ### Estado actual de la base de datos (2026-06-05)
@@ -133,6 +144,7 @@ database/
 | `bible_planes_templates_fases` | 36 | ✅ Poblada |
 | `bible_planes_templates_sesiones` | 879 | ✅ Poblada |
 | `bible_resaltados` | 0 | ✅ Estructura lista — se puebla por uso |
+| `bible_comentarios` | 3.203 | ✅ Poblada — Matthew Henry, 66 libros |
 | `bible_usuarios` | 0 | ⏳ Pendiente |
 | `bible_planes` | 0 | ⏳ Pendiente |
 | `bible_sesiones` | 0 | ⏳ Pendiente |
@@ -155,6 +167,21 @@ database/
 ## API — bible-study-web
 
 Endpoints relevantes para los agentes o integraciones futuras.
+
+### Comentarios (Matthew Henry)
+
+Query del Route Handler en bible-study-web:
+
+```sql
+SELECT * FROM bible_comentarios
+WHERE abreviatura_libro = $abrev
+AND capitulo = $capitulo
+ORDER BY versiculo_inicio;
+```
+
+**Lógica de renderizado en el frontend:** el ícono aparece junto al primer versículo visible de cada rango. Se determina comparando `versiculo_inicio ≤ N ≤ versiculo_fin` para cada versículo renderizado.
+
+**Duplicados:** el parser conserva el comentario más largo cuando hay duplicados por comentarios que cruzan páginas en el PDF.
 
 ### Resaltados
 
@@ -215,7 +242,8 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 5. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
 6. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
 7. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
-8. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
+8. **Comentarios son agnósticos a la versión** — `bible_comentarios` no tiene FK a `bible_libros`. Un comentario de Matthew Henry aplica igual a RVR1960, NVI o cualquier otra versión.
+9. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
 
 ---
 
@@ -229,6 +257,8 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 | Conversor JSON | `scripts/convertir_rvr1960.py` | ✅ Disponible |
 | Carga del plan | `scripts/cargar_plan.py` | ✅ Filtra libros por VERSION_BIBLICA |
 | Templates de planes | `scripts/poblar_templates.py` | ✅ Ejecutado — 7 templates, 879 sesiones |
+| Parser Matthew Henry | `scripts/extraer_matthew_henry.py` | ✅ Genera `comentarios_matthew_henry.json` |
+| Carga comentarios | `scripts/cargar_comentarios.py` | ✅ Ejecutado — 3.203 comentarios cargados |
 | Scheduler Windows | `scripts/setup_scheduler.ps1` | ✅ Listo para desplegar |
 | Migraciones SQL | `database/001-006_*.sql` | ✅ Ejecutadas (falta crear 007 para bible_secciones) |
 | Manejo de errores | `utils/errores.py` | ⚠️ Adaptado de otro proyecto — revisar |
