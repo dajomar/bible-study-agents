@@ -48,7 +48,26 @@ def obtener_sesiones_hoy():
         .order("orden")
         .execute()
     )
-    return resultado.data  # Lista vacía si no hay sesiones o todos los planes están inactivos
+    if resultado.data:
+        return resultado.data
+
+    # Sin sesiones hoy — buscar pendientes de los últimos 3 días
+    from datetime import timedelta
+    hace_tres_dias = (date.today() - timedelta(days=3)).isoformat()
+    print(f"  → Sin sesiones hoy. Buscando pendientes desde {hace_tres_dias}...")
+    resultado = (
+        supabase.table("bible_sesiones")
+        .select("id, orden, versiculo_inicio_id, versiculo_fin_id, id_plan, bible_planes!inner(activo)")
+        .gte("fecha_programada", hace_tres_dias)
+        .lt("fecha_programada", hoy)
+        .eq("completada", False)
+        .eq("bible_planes.activo", True)
+        .order("fecha_programada")
+        .order("id_plan")
+        .order("orden")
+        .execute()
+    )
+    return resultado.data
 
 
 def obtener_version_plan(id_plan):
