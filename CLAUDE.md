@@ -74,6 +74,11 @@ bible_resaltados                → id SERIAL, id_usuario UUID, id_versiculo INT
                                   created_at TIMESTAMPTZ
                                   -- UNIQUE (id_usuario, id_versiculo)
 
+-- Notas personales de usuario por versículo (sin FK a version — aplica a todas)
+bible_notas                     → id, id_usuario UUID, abreviatura_libro TEXT,
+                                  capitulo INTEGER, numero_versiculo INTEGER,
+                                  texto TEXT, created_at, updated_at
+
 -- Comentarios exegéticos (sin FK a bible_libros — aplica a todas las versiones)
 bible_comentarios               → id, abreviatura_libro TEXT, capitulo INTEGER,
                                   titulo_capitulo TEXT, versiculo_inicio INTEGER,
@@ -128,7 +133,8 @@ database/
 ├── 008_busqueda_sin_tildes.sql               # Extensión unaccent + índices búsqueda sin acentos
 ├── 009_crear_tablas_templates.sql            # bible_planes_templates y tablas hijas
 ├── 010_resaltados.sql                        # bible_resaltados
-└── 011_crear_tabla_comentarios.sql           # bible_comentarios (sin FK a bible_libros)
+├── 011_crear_tabla_comentarios.sql           # bible_comentarios (sin FK a bible_libros)
+└── 012_crear_tabla_notas.sql                 # bible_notas — notas personales por versículo
 ```
 
 ### Estado actual de la base de datos (2026-06-05)
@@ -145,6 +151,7 @@ database/
 | `bible_planes_templates_sesiones` | 879 | ✅ Poblada |
 | `bible_resaltados` | 0 | ✅ Estructura lista — se puebla por uso |
 | `bible_comentarios` | 3.203 | ✅ Poblada — Matthew Henry, 66 libros |
+| `bible_notas` | 0 | ✅ Estructura lista — se puebla por uso |
 | `bible_usuarios` | 0 | ⏳ Pendiente |
 | `bible_planes` | 0 | ⏳ Pendiente |
 | `bible_sesiones` | 0 | ⏳ Pendiente |
@@ -242,7 +249,7 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 5. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
 6. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
 7. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
-8. **Comentarios son agnósticos a la versión** — `bible_comentarios` no tiene FK a `bible_libros`. Un comentario de Matthew Henry aplica igual a RVR1960, NVI o cualquier otra versión.
+8. **Comentarios y notas son agnósticos a la versión** — ni `bible_comentarios` ni `bible_notas` tienen FK a `bible_libros`. Ambos referencian por `abreviatura_libro + capitulo + versiculo` para que estén disponibles independientemente de la versión activa del usuario.
 9. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
 
 ---
