@@ -245,12 +245,13 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 1. **Llama es el analista — nunca la fuente.** El texto bíblico viene siempre de Supabase, nunca de Llama.
 2. **RVR1960 es la versión principal** — RV1909 se mantiene solo para estudios comparativos.
 3. **Versión por plan** — `bible_planes.version` determina el texto del análisis. El agente lee este campo para saber qué versículos usar. No cambiar la versión del plan una vez creado.
-4. **Templates son abstractos** — `bible_planes_templates_sesiones` usa `abreviatura_libro + capitulo_inicio + capitulo_fin` sin IDs de versículos. La resolución a IDs reales ocurre en `bible-study-web` vía `POST /api/plan/adoptar` cuando el usuario elige un template y una versión bíblica.
-5. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
-6. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
-7. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
-8. **Comentarios y notas son agnósticos a la versión** — ni `bible_comentarios` ni `bible_notas` tienen FK a `bible_libros`. Ambos referencian por `abreviatura_libro + capitulo + versiculo` para que estén disponibles independientemente de la versión activa del usuario.
-9. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
+4. **Fallback de 3 días** — si el agente no encuentra sesiones para hoy, busca sesiones no completadas de los últimos 3 días (más antigua primero). Cubre fines de semana, fallos del scheduler o días sin conexión.
+5. **Templates son abstractos** — `bible_planes_templates_sesiones` usa `abreviatura_libro + capitulo_inicio + capitulo_fin` sin IDs de versículos. La resolución a IDs reales ocurre en `bible-study-web` vía `POST /api/plan/adoptar` cuando el usuario elige un template y una versión bíblica.
+6. **Formato estándar obligatorio** — convertir cualquier JSON fuente antes de cargarlo.
+7. **Script de carga unificado** — usar `scripts/descargar_y_cargar_versiones.py` para nuevas versiones.
+8. **Convenciones** iguales a Café con Historia: snake_case, archivos numerados, manejo de errores diferenciado.
+9. **Comentarios y notas son agnósticos a la versión** — ni `bible_comentarios` ni `bible_notas` tienen FK a `bible_libros`. Ambos referencian por `abreviatura_libro + capitulo + versiculo` para que estén disponibles independientemente de la versión activa del usuario.
+10. **Dos repositorios separados** — este repo es local y privado. El frontend Next.js vive en `bible-study-web`.
 
 ---
 
@@ -258,7 +259,7 @@ Cualquier versión futura debe estar en este formato antes de cargarse:
 
 | Componente | Archivo | Estado |
 |---|---|---|
-| Agente de análisis | `agents/agente_0_analisis.py` | ✅ Implementado, lee version del plan |
+| Agente de análisis | `agents/agente_0_analisis.py` | ✅ Implementado, lee version del plan, fallback 3 días |
 | Descarga y carga multi-versión | `scripts/descargar_y_cargar_versiones.py` | ✅ Definitivo — RVR1960, NVI, TLA |
 | Carga manual | `scripts/cargar_biblia.py` | ✅ Para cargas desde archivo local |
 | Conversor JSON | `scripts/convertir_rvr1960.py` | ✅ Disponible |
