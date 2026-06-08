@@ -1,1 +1,0 @@
-0 6 * * * cd /app && python3 agents/agente_0_analisis.py >> /var/log/bible-study.log 2>&1
