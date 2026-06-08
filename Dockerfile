@@ -13,4 +13,6 @@ COPY crontab.txt /etc/cron.d/bible-study
 RUN chmod 0644 /etc/cron.d/bible-study
 RUN crontab /etc/cron.d/bible-study
 
-CMD ["cron", "-f"]
+RUN touch /var/log/bible-study.log
+
+CMD cron && tail -f /var/log/bible-study.log
