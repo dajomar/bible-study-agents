@@ -15,4 +15,4 @@ RUN crontab /etc/cron.d/bible-study
 
 RUN touch /var/log/bible-study.log
 
-CMD cron && tail -f /var/log/bible-study.log
+CMD ["sh", "-c", "service cron start && tail -f /var/log/bible-study.log"]
