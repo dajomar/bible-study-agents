@@ -23,7 +23,7 @@ SLACK_TOKEN    = os.getenv("SLACK_TOKEN")
 CANAL_ESTUDIO  = os.getenv("SLACK_CANAL_ESTUDIO", "#bible-study")
 CANAL_ERRORES  = os.getenv("SLACK_CANAL_ERRORES", "#errores")
 OLLAMA_URL     = os.getenv("OLLAMA_ENDPOINT", "http://localhost:11434") + "/api/generate"
-MODELO         = "llama3.1"
+MODELO         = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
 
 # ============================================================
 # CLIENTES
