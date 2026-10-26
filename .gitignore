@@ -1,5 +1,8 @@
 # Credenciales — nunca al repositorio
 .env
+.env.*
+*.env
+!.env.example
 
 # Logs
 *.log
@@ -9,10 +12,17 @@ pipeline.log
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .pytest_cache/
+*.egg-info/
+dist/
+build/
 
 # VS Code
 .vscode/
+
+# JetBrains
+.idea/
 
 # Sistema
 .DS_Store

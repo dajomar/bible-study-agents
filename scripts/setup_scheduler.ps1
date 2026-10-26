@@ -8,8 +8,8 @@
 # CONFIGURACIÓN — ajustar según el servidor
 # ============================================================
 
-$PROYECTO_PATH = "D:\proyectos\bible-study-agents"   # Ruta del proyecto en Windows
-$PYTHON_EXE    = "C:\Users\david\AppData\Local\Programs\Python\Python311\python.exe"                              # O ruta absoluta: "C:\Python311\python.exe"
+$PROYECTO_PATH = "C:\ruta\al\proyecto"   # Ruta del proyecto en Windows
+$PYTHON_EXE    = "C:\Python311\python.exe"           # Ruta al ejecutable de Python
 $HORA_EJECUCION = "05:00"
 $NOMBRE_TAREA   = "BibleStudy-Analisis"
 

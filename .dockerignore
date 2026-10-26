@@ -1,0 +1,21 @@
+# Credenciales — nunca en la imagen
+.env
+.env.*
+
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Datos de carga one-time (archivos grandes — no necesarios en el contenedor)
+scripts/*.json
+scripts/*.pdf
+scripts/*.ps1
+
+# Sistema
+.DS_Store

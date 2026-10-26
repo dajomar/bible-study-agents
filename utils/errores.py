@@ -1,11 +1,13 @@
 import os
 import requests
+from pathlib import Path
 from datetime import datetime, date
 from dotenv import load_dotenv
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
-load_dotenv("D:\\proyectos\\cafe-con-historia\\.env")
+ROOT = Path(__file__).parent.parent
+load_dotenv(ROOT / ".env")
 
 SLACK_TOKEN       = os.getenv("SLACK_TOKEN")
 CANAL_CONTENIDO   = os.getenv("SLACK_CHANNEL", "#contenido")
