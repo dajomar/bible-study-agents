@@ -1,6 +1,6 @@
 # Bible Study Agents
 
-Automated daily Bible study pipeline. A Python agent retrieves a scheduled passage from Supabase, sends it to a local Llama 3.1 model via Ollama for theological analysis, persists the result back to Supabase, and delivers the study to a Slack channel. A companion Next.js web app (separate repo) lets users read past studies, highlight verses, and take notes.
+Automated daily Bible study pipeline. A Python agent retrieves a scheduled passage from Supabase, sends it to an LLM for theological analysis, persists the result back to Supabase, and delivers the study to a Slack channel. Supports Ollama (local), OpenAI, and Anthropic — switchable via a single environment variable. A companion Next.js web app (separate repo) lets users read past studies, highlight verses, and take notes.
 
 > **Note on language:** The codebase — variable names, comments, database identifiers, Slack messages — is intentionally written in Spanish. The system was built for a Spanish-speaking audience and is maintained by a Spanish-speaking developer.
 
@@ -19,8 +19,8 @@ graph TD
         C[(bible_analisis)]
     end
 
-    subgraph "Local server"
-        D[Ollama<br/>llama3.1:8b]
+    subgraph "LLM provider (configurable)"
+        D[Ollama local<br/>OpenAI<br/>Anthropic]
     end
 
     subgraph "bible-study-web (separate repo)"
@@ -48,7 +48,7 @@ graph TD
 | Component | Technology |
 |---|---|
 | Language | Python 3.11 |
-| AI model | Llama 3.1 8B — local via Ollama |
+| AI model | Pluggable: Ollama (local), OpenAI, or Anthropic — set via `PROVEEDOR` env var |
 | Database | Supabase (PostgreSQL) |
 | Notifications | Slack API |
 | Deployment | Docker on Coolify — daily scheduled task |
@@ -135,23 +135,59 @@ Template sessions use `abreviatura_libro + capitulo_inicio + capitulo_fin` witho
 ### Prerequisites
 
 - Python 3.11+
-- [Ollama](https://ollama.com) running locally with `llama3.1:8b` pulled
 - A Supabase project with migrations applied (see `database/`)
 - A Slack app with `chat:write` scope
+- One of:
+  - [Ollama](https://ollama.com) running locally with the desired model pulled
+  - An OpenAI API key
+  - An Anthropic API key
 
 ### Setup
 
 ```bash
 git clone <repo>
 cd bible-study-agents
+
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate       # Mac/Linux
+# venv\Scripts\activate        # Windows
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Configure environment
 cp .env.example .env
-# fill in .env with your credentials
+# fill in .env with your credentials and chosen provider
+```
+
+### Choosing a provider
+
+Set `PROVEEDOR` and `MODELO` in `.env`:
+
+```bash
+# Ollama (local)
+PROVEEDOR=ollama
+MODELO=llama3.1:8b
+OLLAMA_ENDPOINT=http://localhost:11434
+
+# OpenAI
+PROVEEDOR=openai
+MODELO=gpt-4o
+OPENAI_API_KEY=sk-...
+
+# Anthropic
+PROVEEDOR=anthropic
+MODELO=claude-sonnet-4-6
+ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 ### Running the agent manually
 
 ```bash
+# Make sure the virtual environment is active
+source venv/bin/activate
+
 python agents/agente_0_analisis.py
 ```
 
@@ -191,13 +227,13 @@ docker build -t bible-study-agents .
 
 ## Design decisions
 
-**Llama is the analyst, never the source.** Bible text always comes from Supabase. The model never generates scripture — it only analyses passages it has been given verbatim.
+**The LLM is the analyst, never the source.** Bible text always comes from Supabase. The model never generates scripture — it only analyses passages it has been given verbatim.
 
 **Version is pinned to the plan, not the user.** `bible_planes.version` determines which text the agent reads. This keeps the analysis reproducible and prevents drift if a user later changes their preferred version.
 
 **3-day fallback for missed runs.** If no session is scheduled for today (weekend, network outage, deploy gap), the agent picks the oldest incomplete session from the past 3 days. This avoids silent skips without requiring a retry mechanism.
 
-**Error handling is asymmetric.** Infrastructure failures (Ollama unreachable) abort the entire run and alert `#errores`. Per-session failures (malformed LLM output) are logged and skipped so other sessions in the same run still complete.
+**Error handling is asymmetric.** Infrastructure failures (provider unreachable or auth error) abort the entire run and alert `#errores`. Per-session failures (malformed LLM output) are logged and skipped so other sessions in the same run still complete.
 
 **Templates are abstract.** `bible_planes_templates_sesiones` stores `book + chapter range`, not verse IDs. Resolution to actual verse IDs happens in `bible-study-web` when the user adopts a template and picks a version, keeping the templates version-agnostic and reusable.
 
@@ -219,7 +255,7 @@ The division of responsibility matters for evaluating the project: the hard part
 `obtener_versiculos()` fetches all verses between `cap_inicio` and `cap_fin` without trimming by the starting and ending verse numbers within those chapters. A session defined as Gen 1:15–Gen 2:10 sends Gen 1:1–Gen 2:end to the model. The function also assumes the passage spans a single book — cross-book sessions are not handled.
 
 **LLM output parsing relies on a regex fallback.**
-The agent first tries `json.loads()` on the model response. If that fails (unescaped quotes, truncated output), it falls back to per-field `re.search()`. The correct fix is Ollama's structured output with a JSON schema, which eliminates the parsing step entirely.
+The agent first tries `json.loads()` on the model response. If that fails (unescaped quotes, truncated output), it falls back to per-field `re.search()`. The correct fix is structured output (JSON schema enforcement), available in Ollama, OpenAI, and Anthropic — this would eliminate the parsing step entirely.
 
 **No validation of the generated analysis.**
 The agent saves whatever the model returns after parsing — there is no check for empty fields, minimum length, or coherence. A session can be marked completed with an empty analysis if the model returns partial output that survives the regex fallback.
@@ -227,8 +263,8 @@ The agent saves whatever the model returns after parsing — there is no check f
 **Saving the analysis and marking the session complete is not atomic.**
 `guardar_analisis()` and `marcar_completada()` are two separate Supabase calls. A crash between them leaves the session incomplete but with an analysis already saved. The next run inserts a duplicate analysis for the same session. A Postgres function wrapping both writes in a transaction would fix this.
 
-**The timeout error message says 5 minutes but the real timeout is 30.**
-`requests.post(..., timeout=1800)` — 1800 seconds = 30 minutes. The `RuntimeError` message on the next line says "timeout de 5 minutos". The message is wrong; the timeout is correct for a large local model.
+**The Ollama timeout is 30 minutes.**
+`requests.post(..., timeout=1800)` — sized for large local models. Cloud providers (OpenAI, Anthropic) are unaffected as they use their own SDK timeouts.
 
 **User identity is not yet unified with Supabase Auth.**
 `bible_usuarios.id` is currently a standalone `gen_random_uuid()`, not tied to `auth.users.id`. Row-Level Security policies are the next hardening step — they require the two identities to be the same UUID so Supabase can enforce per-user data isolation automatically.

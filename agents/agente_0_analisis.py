@@ -17,13 +17,16 @@ from slack_sdk.errors import SlackApiError
 ROOT = Path(__file__).parent.parent
 load_dotenv(ROOT / ".env")
 
-SUPABASE_URL   = os.getenv("SUPABASE_URL")
-SUPABASE_KEY   = os.getenv("SUPABASE_KEY")
-SLACK_TOKEN    = os.getenv("SLACK_TOKEN")
-CANAL_ESTUDIO  = os.getenv("SLACK_CANAL_ESTUDIO", "#bible-study")
-CANAL_ERRORES  = os.getenv("SLACK_CANAL_ERRORES", "#errores")
-OLLAMA_URL     = os.getenv("OLLAMA_ENDPOINT", "http://localhost:11434") + "/api/generate"
-MODELO         = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
+SUPABASE_URL      = os.getenv("SUPABASE_URL")
+SUPABASE_KEY      = os.getenv("SUPABASE_KEY")
+SLACK_TOKEN       = os.getenv("SLACK_TOKEN")
+CANAL_ESTUDIO     = os.getenv("SLACK_CANAL_ESTUDIO", "#bible-study")
+CANAL_ERRORES     = os.getenv("SLACK_CANAL_ERRORES", "#errores")
+PROVEEDOR         = os.getenv("PROVEEDOR", "ollama").lower()   # ollama | openai | anthropic
+MODELO            = os.getenv("MODELO", "llama3.1:8b")
+OLLAMA_URL        = os.getenv("OLLAMA_ENDPOINT", "http://localhost:11434") + "/api/generate"
+OPENAI_API_KEY    = os.getenv("OPENAI_API_KEY", "")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
 # ============================================================
 # CLIENTES
@@ -183,6 +186,65 @@ def construir_texto_pasaje(versiculos, caps):
 # PASO 3 — Analizar con Llama
 # ============================================================
 
+def _llamar_modelo(prompt):
+    """Dispatcher genérico — llama al proveedor configurado en PROVEEDOR.
+    Devuelve (texto_raw, tokens, duracion_segundos).
+    """
+    inicio = time.time()
+
+    if PROVEEDOR == "ollama":
+        payload = {
+            "model":   MODELO,
+            "prompt":  prompt,
+            "stream":  False,
+            "options": {
+                "num_ctx":     32768,
+                "num_predict": 8192,
+                "temperature": 0.3,
+            },
+        }
+        try:
+            resp = requests.post(OLLAMA_URL, json=payload, timeout=1800)
+            resp.raise_for_status()
+        except requests.ConnectionError:
+            raise RuntimeError(f"Ollama no está corriendo en {OLLAMA_URL.replace('/api/generate', '')}")
+        except requests.Timeout:
+            raise RuntimeError("Ollama no respondió — timeout de 30 minutos")
+        data   = resp.json()
+        texto  = data.get("response", "").strip()
+        tokens = data.get("eval_count", 0)
+
+    elif PROVEEDOR == "openai":
+        from openai import OpenAI
+        cliente = OpenAI(api_key=OPENAI_API_KEY)
+        resp    = cliente.chat.completions.create(
+            model=MODELO,
+            messages=[{"role": "user", "content": prompt}],
+            max_completion_tokens=8192,
+            temperature=0.3,
+        )
+        texto  = resp.choices[0].message.content.strip()
+        tokens = resp.usage.total_tokens
+
+    elif PROVEEDOR == "anthropic":
+        import anthropic
+        cliente = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        resp    = cliente.messages.create(
+            model=MODELO,
+            max_tokens=8192,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3,
+        )
+        texto  = resp.content[0].text.strip()
+        tokens = resp.usage.input_tokens + resp.usage.output_tokens
+
+    else:
+        raise RuntimeError(f"Proveedor desconocido: '{PROVEEDOR}'. Usa ollama, openai o anthropic.")
+
+    duracion = round(time.time() - inicio, 2)
+    return texto, tokens, duracion
+
+
 def analizar_con_llama(texto_pasaje, libro, cap_inicio, cap_fin, version="RVR1960"):
     referencia = f"{libro} {cap_inicio}" if cap_inicio == cap_fin else f"{libro} {cap_inicio}–{cap_fin}"
 
@@ -201,30 +263,7 @@ Responde ÚNICAMENTE con este JSON (sin texto adicional):
   "preguntas_reflexion": "<5 preguntas numeradas profundas para reflexión personal o grupal>"
 }}"""
 
-    payload = {
-        "model":   MODELO,
-        "prompt":  prompt,
-        "stream":  False,
-        "options": {
-            "num_ctx":     32768,  # Ventana de contexto — prompt + respuesta
-            "num_predict": 8192,   # Tokens máximos para la respuesta
-            "temperature": 0.3,    # Más determinista para JSON estructurado
-        },
-    }
-
-    inicio = time.time()
-    try:
-        respuesta = requests.post(OLLAMA_URL, json=payload, timeout=1800)
-        respuesta.raise_for_status()
-    except requests.ConnectionError:
-        raise RuntimeError(f"Ollama no está corriendo en {OLLAMA_URL.replace('/api/generate','')}")
-    except requests.Timeout:
-        raise RuntimeError("Ollama no respondió — timeout de 5 minutos")
-
-    duracion = round(time.time() - inicio, 2)
-    data     = respuesta.json()
-    texto    = data.get("response", "").strip()
-    tokens   = data.get("eval_count", 0)
+    texto, tokens, duracion = _llamar_modelo(prompt)
 
     # Extraer JSON de la respuesta
     inicio_json = texto.find("{")
